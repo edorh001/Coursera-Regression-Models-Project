@@ -22,7 +22,11 @@ Transmission type is not the only factor that determines the fuel efficiency of 
 
 
 ## Exploratory Data Analysis
-First, we load the data set mtcars and change some variables from numeric class to factor class.
+---
+
+To perform the analysis, we will opload the data set mtcars and convert some variables from numeric to factor class.
+Those variables include: cyl,vs,am,gear,and carb
+We will aslo load appropriate libraries 
 
  library(ggplot2)
  data(mtcars)
