@@ -90,45 +90,63 @@ Then, we do some basic exploratory data analyses. Please refer to the Appendix: 
 ## Inference
 At this step, we make the null hypothesis as the MPG of the automatic and manual transmissions are from the same population (assuming the MPG has a normal distribution). We use the two sample T-test to show it.
 
+ ```{r}
  result <- t.test(mpg ~ am)
  result$p.value
  ## [1] 0.001373638
  result$estimate
  ## mean in group 0 mean in group 1 
  ##        17.14737        24.39231
+ 
+ ```
 Since the p-value is 0.00137, we reject our null hypothesis. So, the automatic and manual transmissions are from different populations. And the mean for MPG of manual transmitted cars is about 7 more than that of automatic transmitted cars.
 
 ## Regression Analysis
 First, we fit the full model as the following.
 
+```{r}
  fullModel <- lm(mpg ~ ., data=mtcars)
  summary(fullModel) # results hidden
+ ```
 This model has the Residual standard error as 2.833 on 15 degrees of freedom. And the Adjusted R-squared value is 0.779, which means that the model can explain about 78% of the variance of the MPG variable. However, none of the coefficients are significant at 0.05 significant level.
 
 Then, we use backward selection to select some statistically significant variables.
 
+```{r}
  stepModel <- step(fullModel, k=log(nrow(mtcars)))
  summary(stepModel) # results hidden
+ ```
+ 
 This model is "mpg ~ wt + qsec + am". It has the Residual standard error as 2.459 on 28 degrees of freedom. And the Adjusted R-squared value is 0.8336, which means that the model can explain about 83% of the variance of the MPG variable. All of the coefficients are significant at 0.05 significant level.
 
 Please refer to the Appendix: Figures section for the plots again. According to the scatter plot, it indicates that there appear to be an interaction term between "wt" variable and "am" variable, since automatic cars tend to weigh heavier than manual cars. Thus, we have the following model including the interaction term:
 
+```{r}
  amIntWtModel<-lm(mpg ~ wt + qsec + am + wt:am, data=mtcars)
  summary(amIntWtModel) # results hidden
+ ```
+ 
 This model has the Residual standard error as 2.084 on 27 degrees of freedom. And the Adjusted R-squared value is 0.8804, which means that the model can explain about 88% of the variance of the MPG variable. All of the coefficients are significant at 0.05 significant level. This is a pretty good one.
 
 Next, we fit the simple model with MPG as the outcome variable and Transmission as the predictor variable.
 
- amModel<-lm(mpg ~ am, data=mtcars)
+```{r}
+amModel<-lm(mpg ~ am, data=mtcars)
  summary(amModel) # results hidden
+ ```
+ 
 It shows that on average, a car has 17.147 mpg with automatic transmission, and if it is manual transmission, 7.245 mpg is increased. This model has the Residual standard error as 4.902 on 30 degrees of freedom. And the Adjusted R-squared value is 0.3385, which means that the model can explain about 34% of the variance of the MPG variable. The low Adjusted R-squared value also indicates that we need to add other variables to the model.
 
 Finally, we select the final model.
 
+```{r}
  anova(amModel, stepModel, fullModel, amIntWtModel) 
  confint(amIntWtModel) # results hidden
+ ```
+ 
 We end up selecting the model with the highest Adjusted R-squared value, "mpg ~ wt + qsec + am + wt:am".
 
+```{r}
  summary(amIntWtModel)$coef
  ##              Estimate Std. Error   t value     Pr(>|t|)
  ## (Intercept)  9.723053  5.8990407  1.648243 0.1108925394
@@ -136,6 +154,8 @@ We end up selecting the model with the highest Adjusted R-squared value, "mpg ~ 
  ## qsec         1.016974  0.2520152  4.035366 0.0004030165
  ## am1         14.079428  3.4352512  4.098515 0.0003408693
  ## wt:am1      -4.141376  1.1968119 -3.460340 0.0018085763
+ ```
+ 
 Thus, the result shows that when "wt" (weight lb/1000) and "qsec" (1/4 mile time) remain constant, cars with manual transmission add 14.079 + (-4.141)*wt more MPG (miles per gallon) on average than cars with automatic transmission. That is, a manual transmitted car that weighs 2000 lbs have 5.797 more MPG than an automatic transmitted car that has both the same weight and 1/4 mile time.
 
 ## Residual Analysis and Diagnostics
@@ -148,8 +168,11 @@ The Residuals vs. Leverage argues that no outliers are present, as all values fa
 
 As for the Dfbetas, the measure of how much an observation has effected the estimate of a regression coefficient, we get the following result:
 
+```{r}
 sum((abs(dfbetas(amIntWtModel)))>1)
 ## [1] 0
+
+```
 Therefore, the above analyses meet all basic assumptions of linear regression and well answer the questions.
 
 Appendix: Figures
