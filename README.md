@@ -10,7 +10,12 @@ output:
 ---
 
 ## Executive Summary
-In this report, we will analyze mtcars data set and explore the relationship between a set of variables and miles per gallon (MPG). The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models). We use regression models and exploratory data analyses to mainly explore how automatic (am = 0) and manual (am = 1) transmissions features affect the MPG feature. The t-test shows that the performance difference between cars with automatic and manual transmission. And it is about 7 MPG more for cars with manual transmission than those with automatic transmission. Then, we fit several linear regression models and select the one with highest Adjusted R-squared value. So, given that weight and 1/4 mile time are held constant, manual transmitted cars are 14.079 + (-4.141)*weight more MPG (miles per gallon) on average better than automatic transmitted cars. Thus, cars that are lighter in weight with a manual transmission and cars that are heavier in weight with an automatic transmission will have higher MPG values.
+---
+In this Regression Report, we will perform statistical analysis on mtcars data set, and look for a potential relationship between fuel efficiency in miles per gallon (MPG) and other independent variables. Fuel efficiency is a standard variable that consumers use when selecting appropriate car to buy. The data set in question is a 1974 Motor Trend data from US Magazine. It contains 11 variables included the MPG one. Based on the need of this report we will use various regression models along with exploration data analyses to explore the impact of automatic vs manual transmission on the gas mileage.
+From our analysis we see that the t-test shows that cars with manual transmission perform better with about 7 MPG than the ones with automatic transmission. The difference in fuel efficiency is then obvious depending on the type of transmission.
+Transmission type is not the only factor that determines the fuel efficiency of a car but there are other variables as well included the actual weight of the car.
+---
+
 
 ## Exploratory Data Analysis
 First, we load the data set mtcars and change some variables from numeric class to factor class.
