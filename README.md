@@ -6,6 +6,7 @@ output:
   pdf_document: 
    fig_height: 8 
    fig_width: 8
+   
 ---
 
 ## Executive Summary
