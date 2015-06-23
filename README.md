@@ -27,7 +27,7 @@ Transmission type is not the only factor that determines the fuel efficiency of 
 To perform the analysis, we will opload the data set mtcars and convert some variables from numeric to factor class.
 Those variables include: cyl,vs,am,gear,and carb
 We will aslo load appropriate libraries 
-
+```{r}
  library(ggplot2)
  data(mtcars)
  mtcars[1:3, ] # Sample Data
@@ -43,6 +43,7 @@ We will aslo load appropriate libraries
  mtcars$gear <- factor(mtcars$gear)
  mtcars$carb <- factor(mtcars$carb)
  attach(mtcars)
+ ```
  ## The following objects are masked from mtcars (pos = 3):
  ## 
  ##     am, carb, cyl, disp, drat, gear, hp, mpg, qsec, vs, wt
