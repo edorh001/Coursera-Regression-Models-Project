@@ -1,14 +1,13 @@
 # Coursera-Regression-Models-Project
 ---
-title: "Regression Models Final Project - Motor Trend Data Analysis Report" 
+Title: "Regression Models Final Project - Motor Trend Data Analysis Report" 
 
-author: "Messan Marcus Edorh"
+Author: "Messan Marcus Edorh"
 
-output: 
+Output: 
   pdf_document: 
   
    fig_height: 7
-  
    fig_width: 7
   
 ---
