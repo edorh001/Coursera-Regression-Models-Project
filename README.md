@@ -6,9 +6,9 @@ author: "Messan Marcus Edorh"
 
 output: 
   pdf_document: 
-   fig_height: 8 
-   fig_width: 8
-   
+   fig_height: 7
+   fig_width: 7
+  
 ---
 
 ## Executive Summary
