@@ -1,5 +1,9 @@
 # Coursera-Regression-Models-Project
-title: "Regression Models Final Project - Motor Trend Data Analysis Report" author: output: pdf_document: fig_height: 8 fig_width: 8
+---
+title: "Regression Models Final Project - Motor Trend Data Analysis Report" 
+author: Messan Marcus Edorh
+output: pdf_document: fig_height: 8 fig_width: 8
+---
 
 ## Executive Summary
 In this report, we will analyze mtcars data set and explore the relationship between a set of variables and miles per gallon (MPG). The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models). We use regression models and exploratory data analyses to mainly explore how automatic (am = 0) and manual (am = 1) transmissions features affect the MPG feature. The t-test shows that the performance difference between cars with automatic and manual transmission. And it is about 7 MPG more for cars with manual transmission than those with automatic transmission. Then, we fit several linear regression models and select the one with highest Adjusted R-squared value. So, given that weight and 1/4 mile time are held constant, manual transmitted cars are 14.079 + (-4.141)*weight more MPG (miles per gallon) on average better than automatic transmitted cars. Thus, cars that are lighter in weight with a manual transmission and cars that are heavier in weight with an automatic transmission will have higher MPG values.
