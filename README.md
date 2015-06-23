@@ -14,6 +14,7 @@ output:
 In this Regression Report, we will perform statistical analysis on mtcars data set, and look for a potential relationship between fuel efficiency in miles per gallon (MPG) and other independent variables. Fuel efficiency is a standard variable that consumers use when selecting appropriate car to buy. The data set in question is a 1974 Motor Trend data from US Magazine. It contains 11 variables included the MPG one. Based on the need of this report we will use various regression models along with exploration data analyses to explore the impact of automatic vs manual transmission on the gas mileage.
 From our analysis we see that the t-test shows that cars with manual transmission perform better with about 7 MPG than the ones with automatic transmission. The difference in fuel efficiency is then obvious depending on the type of transmission.
 Transmission type is not the only factor that determines the fuel efficiency of a car but there are other variables as well included the actual weight of the car.
+
 ---
 
 
