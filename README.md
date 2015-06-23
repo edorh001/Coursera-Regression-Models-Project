@@ -6,7 +6,9 @@ author: "Messan Marcus Edorh"
 
 output: 
   pdf_document: 
+  
    fig_height: 7
+  
    fig_width: 7
   
 ---
