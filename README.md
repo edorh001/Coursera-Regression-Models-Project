@@ -14,7 +14,8 @@ Output:
 
 ## Executive Summary
 ---
-In this Regression Report, we will perform statistical analysis on mtcars data set, and look for a potential relationship between fuel efficiency in miles per gallon (MPG) and other independent variables. Fuel efficiency is a standard variable that consumers use when selecting appropriate car to buy. The data set in question is a 1974 Motor Trend data from US Magazine. It contains 11 variables included the MPG one. Based on the need of this report we will use various regression models along with exploration data analyses to explore the impact of automatic vs manual transmission on the gas mileage.
+The intent of this report is to perform statistical analysis on mtcars data set, and look for a potential relationship between fuel efficiency in miles per gallon (MPG) and other independent variables. Fuel efficiency is a standard variable that consumers use when selecting appropriate car to buy. The data set in question is a 1974 Motor Trend data from US Magazine. It contains 11 variables included the MPG one.The data was publised in the 1974 *Motor Trend* US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models)
+Based on the need of this report we will use various regression models along with exploration data analyses to explore the impact of automatic vs manual transmission on the gas mileage.
 From our analysis we see that the t-test shows that cars with manual transmission perform better with about 7 MPG than the ones with automatic transmission. The difference in fuel efficiency is then obvious depending on the type of transmission.
 Transmission type is not the only factor that determines the fuel efficiency of a car but there are other variables as well included the actual weight of the car.
 
@@ -24,7 +25,7 @@ Transmission type is not the only factor that determines the fuel efficiency of 
 ## Exploratory Data Analysis
 ---
 
-To perform the analysis, we will opload the data set mtcars and convert some variables from numeric to factor class.
+To perform the analysis, we will upload the data set mtcars and convert some variables from numeric to factor class.
 Those variables include: cyl,vs,am,gear,and carb
 We will aslo load appropriate libraries 
 ```{r}
@@ -99,18 +100,18 @@ At this step, we make the null hypothesis as the MPG of the automatic and manual
  ##        17.14737        24.39231
  
  ```
-Since the p-value is 0.00137, we reject our null hypothesis. So, the automatic and manual transmissions are from different populations. And the mean for MPG of manual transmitted cars is about 7 more than that of automatic transmitted cars.
+The p-value is 0.00137, then we reject our null hypothesis. we conclude then that the automatic and manual transmissions are from different populations. And the mean for MPG of manual transmitted cars is about 7 more than that of automatic transmitted ones.
 
 ## Regression Analysis
-First, we fit the full model as the following.
+Here, we fit the full model as described below. See the code
 
 ```{r}
  fullModel <- lm(mpg ~ ., data=mtcars)
  summary(fullModel) # results hidden
  ```
-This model has the Residual standard error as 2.833 on 15 degrees of freedom. And the Adjusted R-squared value is 0.779, which means that the model can explain about 78% of the variance of the MPG variable. However, none of the coefficients are significant at 0.05 significant level.
+This model has the Residual standard error as 2.833 on 15 degrees of freedom. And the Adjusted R-squared value is 0.779. This means that the model can explain about 78% of the variance of the MPG variable. However, none of the coefficients are significant at 0.05 significant level.
 
-Then, we use backward selection to select some statistically significant variables.
+From there we use backward selection to choose some statistically significant variables.
 
 ```{r}
  stepModel <- step(fullModel, k=log(nrow(mtcars)))
