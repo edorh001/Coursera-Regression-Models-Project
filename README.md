@@ -157,10 +157,10 @@ We end up selecting the model with the highest Adjusted R-squared value, "mpg ~ 
  ## wt:am1      -4.141376  1.1968119 -3.460340 0.0018085763
  ```
  
-Thus, the result shows that when "wt" (weight lb/1000) and "qsec" (1/4 mile time) remain constant, cars with manual transmission add 14.079 + (-4.141)*wt more MPG (miles per gallon) on average than cars with automatic transmission. That is, a manual transmitted car that weighs 2000 lbs have 5.797 more MPG than an automatic transmitted car that has both the same weight and 1/4 mile time.
+Hence, the result shows that when "wt" (weight lb/1000) and "qsec" (1/4 mile time) remain constant, cars with manual transmission add 14.079 + (-4.141)*wt more MPG (miles per gallon) on average than cars with automatic transmission. That is, a manual transmitted car that weighs 2000 lbs have 5.797 more MPG than an automatic transmitted car that has both the same weight and 1/4 mile time.
 
 ## Residual Analysis and Diagnostics
-Please refer to the Appendix: Figures section for the plots. According to the residual plots, we can verify the following underlying assumptions:
+Refer to the Appendix: Figures section for the plots. According to the residual plots, we can verify the following underlying assumptions:
 
 The Residuals vs. Fitted plot shows no consistent pattern, supporting the accuracy of the independence assumption.
 The Normal Q-Q plot indicates that the residuals are normally distributed because the points lie closely to the line.
